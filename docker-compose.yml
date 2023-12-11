@@ -2,8 +2,9 @@ version: '3'
 
 services:
 
-  backend:
+  frontend:
     build:
-      context: ./Backend
-    ports:
-      - 8000:8000
+      context: ./Frontend
+    ports: 
+      - 3000:3000
+  
