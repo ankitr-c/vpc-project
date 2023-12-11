@@ -7,34 +7,17 @@
 setVariables()
 {
     #defining directory path.
-    # path="/home/ubuntu/Node-Project"
     path="/home/ankitraut0987/StaticIP-MultiVM-DockerProject"
-    
-    #defining nginx path
-    nginx_path="/etc/nginx/sites-enabled"
-
 }
 
 getVariables()
 {
     echo "Path:$path"
-    echo "Nginx Path:$nginx_path"
 
-}
+}W
 
 
 setVariables
-
-#Install Nginx Server
-sudo apt-get install nginx -y >/dev/null || { echo "Failed to Install Nginx Server"; exit 1; }
-
-#Configuring Nginx Server:
-sudo rm "$nginx_path/default" || echo "Default Config File Not Found"
-cd "$path/Execution-Script/"
-sudo cp "default" "$nginx_path/"
-sudo systemctl restart nginx
-
-echo "*** Successfully Configured Nginx ***"
 
 cd
 
@@ -46,8 +29,4 @@ cd "$path"
 
 sudo docker-compose down && echo "Docker Is Down Now" || echo "Docker Already Down"
 
-sudo docker rmi staticip-multivm-dockerproject_frontend || echo "Error deleting frontend image"
-
 sudo docker-compose up -d || echo "error in compose file"
-
-
