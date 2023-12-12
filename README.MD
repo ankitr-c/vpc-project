@@ -15,6 +15,14 @@
         save and exit.
              
 # STEP 3:
+    Imp changes in DockerScript.sh file
+
+        change the name of the project to your project: <staticip-multivm-dockerproject>_frontend
+
+        In my case: vpc-project_frontend
+    
+
+# STEP 4:
 
     change permission and execute the docker script.
     
