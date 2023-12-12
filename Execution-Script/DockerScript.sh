@@ -2,13 +2,12 @@
 
 # Author: Ankit Raut 
 
-# Description: 
+# Description: This Docker Script will install and configure the nginx for frontend and also start the containers for front end.
 
 setVariables()
 {
     #defining directory path.
-    # path="/home/ubuntu/Node-Project"
-    path="/home/ankitraut0987/StaticIP-MultiVM-DockerProject"
+    path="/home/ankitraut0987/vpc-project"
     
     #defining nginx path
     nginx_path="/etc/nginx/sites-enabled"
@@ -26,7 +25,9 @@ getVariables()
 setVariables
 
 #Install Nginx Server
-sudo apt-get install nginx -y >/dev/null || { echo "Failed to Install Nginx Server"; exit 1; }
+# sudo apt-get install nginx -y >/dev/null || { echo "Failed to Install Nginx Server"; exit 1; }
+sudo apt-get install nginx -y || { echo "Failed to Install Nginx Server"; exit 1; }
+
 
 #Configuring Nginx Server:
 sudo rm "$nginx_path/default" || echo "Default Config File Not Found"
@@ -38,8 +39,15 @@ echo "*** Successfully Configured Nginx ***"
 
 cd
 
-sudo apt-get install docker -y >/dev/null && echo "** Successfully Installed Docker **" || { echo "Failed to Install Docker"; exit 1; }
-sudo apt-get install docker-compose -y >/dev/null && echo "** Successfully Installed Docker-Compose **" || { echo "Failed to Install Docker-Copmose"; exit 1; }
+# sudo apt-get install docker -y >/dev/null && echo "** Successfully Installed Docker **" || { echo "Failed to Install Docker"; exit 1; }
+# sudo apt-get install docker-compose -y >/dev/null && echo "** Successfully Installed Docker-Compose **" || { echo "Failed to Install Docker-Copmose"; exit 1; }
+
+# Installing Docker.
+sudo apt-get install docker -y && echo "** Successfully Installed Docker **" || { echo "Failed to Install Docker"; exit 1; }
+
+# Installing Docker-Compose.
+sudo apt-get install docker-compose -y && echo "** Successfully Installed Docker-Compose **" || { echo "Failed to Install Docker-Copmose"; exit 1; }
+
 
 
 cd "$path"
