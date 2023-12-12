@@ -8,7 +8,7 @@
     
     execute the DockerScript.
     
-    ## commands:
+    ##commands:
     
             1. chmod +x DockerScript.sh
     
