@@ -2,12 +2,12 @@
 
 # Author: Ankit Raut 
 
-# Description: 
+# Description: This Docker Script will install and configure the database.
 
 setVariables()
 {
     #defining directory path.
-    path="/home/ankitraut0987/StaticIP-MultiVM-DockerProject"
+    path="/home/ankitraut0987/vpc-project"
 }
 
 getVariables()
@@ -20,6 +20,9 @@ getVariables()
 setVariables
 
 cd
+
+# sudo apt-get install docker -y >/dev/null && echo "** Successfully Installed Docker **" || { echo "Failed to Install Docker"; exit 1; }
+# sudo apt-get install docker-compose -y >/dev/null && echo "** Successfully Installed Docker-Compose **" || { echo "Failed to Install Docker-Copmose"; exit 1; }
 
 sudo apt-get install docker -y >/dev/null && echo "** Successfully Installed Docker **" || { echo "Failed to Install Docker"; exit 1; }
 sudo apt-get install docker-compose -y >/dev/null && echo "** Successfully Installed Docker-Compose **" || { echo "Failed to Install Docker-Copmose"; exit 1; }
