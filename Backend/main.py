@@ -8,7 +8,7 @@ CORS(app)
 # for manual container deployement tyr this 
 # client = MongoClient("mongodb://localhost:27017")
 
-client = MongoClient("mongodb://root:root@Private-IP-of-your-VPC-Mongo-Database-VM:27017")
+client = MongoClient("mongodb://root:root@192.168.1.5:27017")
 
 
 db = client["shopping"]
