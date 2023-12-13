@@ -33,3 +33,5 @@ cd "$path"
 sudo docker-compose down && echo "Docker Is Down Now" || echo "Docker Already Down"
 
 sudo docker-compose up -d || echo "error in compose file"
+
+
